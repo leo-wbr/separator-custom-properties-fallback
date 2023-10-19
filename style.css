@@ -1,0 +1,83 @@
+:root {
+  --clr-neutral-100: #fff;
+  --clr-neutral-200: #dcdcdc;
+  --clr-neutral-300: #c0c0c0;
+  --clr-neutral-400: #a9a9a9;
+  --clr-neutral-500: #696969;
+
+  --sep-wave-top: url('data:image/svg+xml;base64,PHN2ZyAgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAwIDEyMCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSIgPjxwYXRoICBkPSJNMzIxLjM5LDU2LjQ0YzU4LTEwLjc5LDExNC4xNi0zMC4xMywxNzItNDEuODYsODIuMzktMTYuNzIsMTY4LjE5LTE3LjczLDI1MC40NS0uMzlDODIzLjc4LDMxLDkwNi42Nyw3Miw5ODUuNjYsOTIuODNjNzAuMDUsMTguNDgsMTQ2LjUzLDI2LjA5LDIxNC4zNCwzVjBIMFYyNy4zNUE2MDAuMjEsNjAwLjIxLDAsMCwwLDMyMS4zOSw1Ni40NFoiIGNsYXNzPSJzaGFwZS1maWxsIiBmaWxsPSIjRkZGRkZGIiBmaWxsLW9wYWNpdHk9IjEiPjwvcGF0aD48L3N2Zz4=');
+
+  --sep-wave-bottom: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyBkYXRhLW5hbWU9IkxheWVyIDEiIHZpZXdCb3g9IjAgMCAxMjAwIDEyMCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cGF0aCBkPSJNOTg1LjY2LDkyLjgzQzkwNi42Nyw3Miw4MjMuNzgsMzEsNzQzLjg0LDE0LjE5Yy04Mi4yNi0xNy4zNC0xNjguMDYtMTYuMzMtMjUwLjQ1LjM5LTU3Ljg0LDExLjczLTExNCwzMS4wNy0xNzIsNDEuODZBNjAwLjIxLDYwMC4yMSwwLDAsMSwwLDI3LjM1VjEyMEgxMjAwVjk1LjhDMTEzMi4xOSwxMTguOTIsMTA1NS43MSwxMTEuMzEsOTg1LjY2LDkyLjgzWiIgY2xhc3M9InNoYXBlLWZpbGwiIGZpbGw9IiNGRkZGRkYiIGZpbGwtb3BhY2l0eT0iMSIvPgo8L3N2Zz4=');
+}
+
+/* Production */
+[class*='bg-'] {
+  position: relative;
+  background-color: var(--bg, var(--light)) !important;
+  color: var(--fg, var(--dark)) !important;
+  padding: var(--bg-py, 3rem) var(--bg-px, 0) !important;
+}
+
+[class*='bg-']:before,
+[class*='bg-']:after {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: var(--sep-height, 30px);
+  overflow: hidden;
+}
+
+[class*='bg-']:before {
+  top: 0;
+  left: 0;
+  background-image: var(--sep-t, none);
+}
+[class*='bg-']:after {
+  bottom: 0;
+  left: 0;
+  background-image: var(--sep-b, none);
+}
+
+/* Live  */
+.bg-primary {
+  --bg: var(--clr-neutral-200);
+  --bg-py: 8rem;
+  --sep-t: var(--sep-wave-top);
+  --sep-b: var(--sep-wave-bottom);
+  /* background: url('https://www.alphaevents.com/UploadedFiles/EventPage/30112/images/bg-hero-2.jpg'); */
+}
+.bg-secondary {
+  --bg: var(--clr-neutral-300);
+  --sep-t: var(--sep-wave-top);
+  --sep-b: var(--sep-wave-bottom);
+  --bg-py: 10rem;
+}
+
+.bg-accent {
+  --bg: var(--clr-neutral-500);
+  --fg: var(--clr-neutral-100);
+  --sep-t: var(--sep-wave-top);
+  --sep-b: var(--sep-wave-bottom);
+  --bg-py: 8rem;
+  --sep-height: 50px;
+}
+
+@media (min-width: 768px) {
+  .bg-accent {
+    --sep-height: 30px;
+  }
+}
+
+@media (min-width: 992px) {
+  .bg-accent {
+    --sep-height: 45px;
+  }
+}
+
+.bg-accent-2 {
+  --bg: var(--clr-neutral-300);
+  --fg: var(--clr-neutral-100);
+  --sep-t: var(--sep-wave-top);
+  --sep-b: var(--sep-wave-bottom);
+  --bg-py: 8rem;
+}
